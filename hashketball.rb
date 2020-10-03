@@ -149,11 +149,6 @@ def player_numbers(team_name)
     end
   end
 end
-
-# def players
-#   game_hash[:home][:players].concat(game_hash[:away][:players])
-# end
-
 def team(team_name)
   case team_name
   when game_hash[:home][:team_name]
@@ -162,7 +157,6 @@ def team(team_name)
     game_hash[:away]
   end
 end 
-
 def player_stats(player_name)
 	game_hash.each do |location, team_data|
 		team_data[:players].each do |a| 
@@ -174,21 +168,6 @@ def player_stats(player_name)
 		end
 	end
 end
-
-# def num_points_scored player_name
-#   # if game_hash[:home][:players][:player_name] == player_name
-#   #   game_hash[:home][:players][:points].to_i 
-#   # elsif game_hash[:away][:players][:player_name]== player_name
-#   #   game_hash[:away][:players][:points].to_i
-#   # end  
-#   players= game_hash[:home][:players].merge(game_hash[:away][:players])
-#   players[player_name][:points]
-# end
-
-# def shoe_size(player_name)
-#   players[player_name][:shoe]
-# end
-
 def team_colors(team_name)
   team(team_name)[:colors]
 end
@@ -196,15 +175,6 @@ end
 def team_names
   [game_hash[:home][:team_name], game_hash[:away][:team_name]]
 end
-
-# def player_numbers(team_name)
-#   team(team_name)[:players].map{|key, value| value[:number]}
-# end
-
-# def player_stats(player_name)
-#   players[player_name]
-# end
-
 def big_shoe_rebounds
   big_shoes_guy = 0
   rebounds = 0
